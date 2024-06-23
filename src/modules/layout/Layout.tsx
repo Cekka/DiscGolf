@@ -4,9 +4,9 @@ import { AppHeader } from "./AppHeader"
 export const Layout = () => {
 
   return (
-    <>
+    <div>
       <AppHeader/>
       <Outlet/>
-    </>
+    </div>
   )
 }

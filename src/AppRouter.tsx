@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./modules/layout/Layout";
+import { AppHome } from "./modules/home/AppHome";
 
 
 const router = createBrowserRouter([
@@ -10,11 +11,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <div>Home</div>
+        element: <AppHome/>
       },
       {
         path: "home",
-        element: <div>Home</div>
+        element: <AppHome/>
       },
       {
         path: "frisbee-types",
