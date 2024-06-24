@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./modules/layout/Layout";
 import { AppHome } from "./modules/home/AppHome";
+import { Points } from "./modules/game/Points";
 
 
 const router = createBrowserRouter([
@@ -27,10 +28,14 @@ const router = createBrowserRouter([
       },
       {
         path: "points",
-        element: <div>points in your game</div>
+        element: <Points/>
       },
       {
         path: "fields",
+        element: <div>choose a field to play</div>
+      },
+      {
+        path: "table/:holes",
         element: <div>choose a field to play</div>
       }
     ],

@@ -2,8 +2,8 @@ export const AppHome = () => {
 
   return (
     <>
-      <div style={{height: "600px", width:"100vw", backgroundColor:"lightblue"}}>
-        <img src="/src/assets/DiscGolfLand.jpg" style={{objectFit:"cover", height:"100%", width:"100%"}}/>
+      {/* <div style={{height: "600px", width:"100vw", backgroundColor:"lightblue"}}>
+        <img src="/" style={{objectFit:"cover", height:"100%", width:"100%"}}/>
       </div>
       <div className="">
         <div style={{marginTop:"-250px"}} className="">
@@ -21,7 +21,7 @@ export const AppHome = () => {
             <li>The sport has a dedicated community of enthusiasts who enjoy both casual play and competitive events.</li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
 
     </>
