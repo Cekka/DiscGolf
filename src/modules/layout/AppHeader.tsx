@@ -36,8 +36,8 @@ export const AppHeader = () => {
           </NavLink>
         </div>
         <div>
-          <NavLink to={NavBarUrl.points}>
-            Points
+          <NavLink to={NavBarUrl.game}>
+            Game
           </NavLink>
         </div>
         <div>

@@ -1,0 +1,13 @@
+.input-box,
+.player-input-box {
+  padding: 20px;
+}
+
+.label-description {
+  margin-right: 10px;
+  display: inline;
+}
+
+.input-name {
+  margin-bottom: 8px;
+}
