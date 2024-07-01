@@ -11,7 +11,7 @@ type MyObject = {
 
 export const PreparationGame = () => {
   const navigate = useNavigate();
-  const [holes, setHoles] = useState<number>(1);
+  const [holes, setHoles] = useState<number>(9);
   const [totalList, setTotalList] = useState<MyObject[]>([]);
 
   const handleGenerateTable = () => {
@@ -51,7 +51,7 @@ export const PreparationGame = () => {
       <div className="input-box">
         <h4 className="label-description">Number of holes</h4>
         <InputNumber
-          min={1} max={30} defaultValue={9} formatter={formatter} parser={parser}
+          min={1} max={30} defaultValue={holes} formatter={formatter} parser={parser}
           onChange={handleSetHoles}
         />
       </div>

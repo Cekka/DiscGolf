@@ -1,0 +1,15 @@
+.edit-points-dialog {
+  padding: 24px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .edit-item-dialog {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-100 > div {
+    width: 100% !important;
+  }
+}

@@ -2,6 +2,7 @@ import { Table, TableColumnsType } from "antd";
 import { useMemo, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { EditPointsDialog } from "./EditPointsDialog";
 
 export const GameBoard = () => {
   const {holes} = useParams();
@@ -10,6 +11,16 @@ export const GameBoard = () => {
   const urlParams = new URLSearchParams(location.search);
   const playersParam = urlParams.get('players');
   const decodedPlayers = decodeURIComponent(playersParam!);
+
+  const [isEditOpen, setIsEditOpen] = useState<boolean>(false);
+
+  const handleClickEdit = () => {
+    setIsEditOpen(true);
+  }
+
+  const handleEditOk = () => {
+    setIsEditOpen(false);
+  }
 
   const columns = useMemo((): TableColumnsType => {
     const holesColumns = [];
@@ -39,7 +50,7 @@ export const GameBoard = () => {
               key: 'operation',
               fixed: 'right',
               width: 100,
-              render: () => <a>edit</a>,
+              render: (a) => <a onClick={handleClickEdit}>edit</a>,
             },
           ]
         );
@@ -74,10 +85,13 @@ export const GameBoard = () => {
 
   const [data, setData] = useState(initialData);
 
-
-
   return(
-
-    <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />
+    <>
+      <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />
+      <EditPointsDialog
+        isEditOpen={isEditOpen}
+        onOk={handleEditOk}
+        onCancel={()=>setIsEditOpen(false)} />
+    </>
   )
 }
