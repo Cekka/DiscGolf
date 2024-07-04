@@ -13,3 +13,7 @@
     width: 100% !important;
   }
 }
+
+label {
+  margin-bottom: 4px;
+}

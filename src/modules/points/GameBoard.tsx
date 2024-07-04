@@ -11,11 +11,12 @@ export const GameBoard = () => {
   const urlParams = new URLSearchParams(location.search);
   const playersParam = urlParams.get('players');
   const decodedPlayers = decodeURIComponent(playersParam!);
-
+  const [row, setRow] = useState<{key: string, name:string}>({key:'', name:''});
   const [isEditOpen, setIsEditOpen] = useState<boolean>(false);
 
-  const handleClickEdit = () => {
+  const handleClickEdit = (editRow:{key: string, name:string}) => {
     setIsEditOpen(true);
+    setRow(editRow);
   }
 
   const handleEditOk = () => {
@@ -50,7 +51,7 @@ export const GameBoard = () => {
               key: 'operation',
               fixed: 'right',
               width: 100,
-              render: (a) => <a onClick={handleClickEdit}>edit</a>,
+              render: (editRow) => <a onClick={()=>handleClickEdit(editRow)}>edit</a>,
             },
           ]
         );
@@ -91,7 +92,9 @@ export const GameBoard = () => {
       <EditPointsDialog
         isEditOpen={isEditOpen}
         onOk={handleEditOk}
-        onCancel={()=>setIsEditOpen(false)} />
+        onCancel={()=>setIsEditOpen(false)}
+        row={row}
+        />
     </>
   )
 }

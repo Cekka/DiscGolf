@@ -6,11 +6,12 @@ import './EditPointsDialog.css'
 
 type EditPointsDialogProps = {
   isEditOpen: boolean;
+  row: {key: string; name:string};
   onOk: () => void;
   onCancel: () => void;
 }
 
-export const EditPointsDialog = ({isEditOpen, onOk, onCancel}:EditPointsDialogProps) => {
+export const EditPointsDialog = ({isEditOpen, row, onOk, onCancel}:EditPointsDialogProps) => {
   const [disabled, setDisabled] = useState(true);
   const [bounds, setBounds] = useState({ left: 0, top: 0, bottom: 0, right: 0 });
   const draggleRef = useRef<HTMLDivElement>(null);
@@ -71,7 +72,7 @@ export const EditPointsDialog = ({isEditOpen, onOk, onCancel}:EditPointsDialogPr
         <div className="edit-points-dialog">
           <div className="edit-item-dialog">
             <label>Player</label>
-            <Input/>
+            <Input value={row.name} disabled/>
           </div>
           <div className="edit-item-dialog">
             <label>Hole</label>
